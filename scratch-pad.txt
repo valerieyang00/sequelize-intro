@@ -1,0 +1,38 @@
+table: users
+-------------------
+firstName: TEXT
+lastName: TEXT
+age: INT
+email: TEXT
+
+NOTE: generate models with a SINGULAR name (no s on the end)
+
+sequelize model:create --name user --attributes firstName:string,lastName:string,age:integer,email:string
+
+database can have one or many tables
+table, one table has many columns
+one row in a table is called a record
+
+
+sequelize model:create --name pet --attributes name:string,species:string,description:text,userId:integer
+
+N:M relationship:
+
+TABLE: toy
+-------
+type: VARCHAR
+color: VARCHAR
+
+JOIN TABLE: pets_toys
+----------------------
+FK: petId: INT
+FK: toyId: INT
+
+Note: join table names should be plural
+
+sequelize model:create --name toy --attributes type:string,color:string
+
+sequelize model:create --name pets_toys --attributes petId:integer,toyId:integer
+
+
+
